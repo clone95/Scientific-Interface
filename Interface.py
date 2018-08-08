@@ -1,4 +1,4 @@
-from  Functions import *
+from Functions import *
 
 vect = [1, 4, 12]
 
@@ -13,7 +13,8 @@ def common_stats(values):
 menu = "Welcome to your scientific utility tool:\n" \
        "Which operation do you need?\n\n" \
        "a.   I want to get common statistical values of my vector\n" \
-       "b.   I want to predict object velocity\n"
+       "b.   Convert values counting occurences, from file to output file\n" \
+       "c.   I want to predict object velocity\n"
 
 
 def main():
@@ -41,5 +42,12 @@ def main():
             for el in range(0, len(file_vect)):
                 vals.append(float(file_vect[el]))
             common_stats(vals)
+    elif choice == "b":
+        file_to_clean = input("Insert absolute file path.")
+        data_cleaner(file_to_clean)
+
+    # other options
+
 
 main()
+

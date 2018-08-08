@@ -1,6 +1,36 @@
 import math
-
+import os
 # common statistical functions
+
+
+def data_cleaner(input_file):
+    finale = []
+    data = []
+    target = []     # occurences for value
+
+    with open(input_file) as fobj:
+        for line in fobj:
+            row = line.split()
+            data.append(row[:-1])
+            target.append(row[-1])
+
+    for el in range(len(data)):  # for every value
+        num = int(target[el])  # how much occurences
+        for occ in range(num):
+            finale.append(data[el])  # final data
+
+    file = open("to_rem_parentheses.txt", "w")
+    file.writelines(["%s\n" % item for item in finale])
+
+    with open('cleaning_done.txt', 'w') as f_out:           # removes parentheses
+        with open('to_rem_parentheses.txt') as f_in:
+            for line in f_in:
+                for ch in ['[', ']', "'"]:
+                    line = line.replace(ch, '')
+                f_out.write(line)
+
+    file.close()
+    os.remove("to_rem_parentheses.txt")
 
 
 def average(values):
@@ -34,7 +64,6 @@ def std_deviation(values):                # mean squared error
         dividend += distance(value, average(values))
     to_square = dividend/(len(values)-1)
     return math.sqrt(to_square)
-
 
 
 
