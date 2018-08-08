@@ -1,7 +1,7 @@
 # Scientific-Interface
-##Scientific functions interface.
+## Scientific functions interface.
 
-###Features:
+### Features:
 
 - Common statistical indices for a given numbers list
 - Data transformer for scientific values list
