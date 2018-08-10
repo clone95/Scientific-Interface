@@ -22,7 +22,7 @@ def data_cleaner(input_file):
     file = open("to_rem_parentheses.txt", "w")
     file.writelines(["%s\n" % item for item in finale])
 
-    with open('cleaning_done.txt', 'w') as f_out:           # removes parentheses
+    with open('converter_output_example.txt', 'w') as f_out:           # removes parentheses
         with open('to_rem_parentheses.txt') as f_in:
             for line in f_in:
                 for ch in ['[', ']', "'"]:
