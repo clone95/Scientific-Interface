@@ -66,5 +66,9 @@ def std_deviation(values):                # mean squared error
     return math.sqrt(to_square)
 
 
+def velocity(s0, v0, t, a):
+    distance = s0 + v0 * t + 0.5 * a * t ** 2
+    return distance
+
 
 
