@@ -22,7 +22,7 @@ def data_cleaner(input_file):
     file = open("to_rem_parentheses.txt", "w")
     file.writelines(["%s\n" % item for item in finale])
 
-    with open('cleaning_done.txt', 'w') as f_out:           # removes parentheses
+    with open('converter_output_example.txt', 'w') as f_out:           # removes parentheses
         with open('to_rem_parentheses.txt') as f_in:
             for line in f_in:
                 for ch in ['[', ']', "'"]:
@@ -65,6 +65,10 @@ def std_deviation(values):                # mean squared error
     to_square = dividend/(len(values)-1)
     return math.sqrt(to_square)
 
+
+def velocity(s0, v0, t, a):
+    distance = s0 + v0 * t + 0.5 * a * t ** 2
+    return distance
 
 
 

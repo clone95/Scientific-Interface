@@ -14,7 +14,7 @@ menu = "Welcome to your scientific utility tool:\n" \
        "Which operation do you need?\n\n" \
        "a.   I want to get common statistical values of my vector\n" \
        "b.   Convert values counting occurences, from file to output file\n" \
-       "c.   I want to predict object velocity\n"
+       "c.   I want to predict what distance has an object traveled \n"
 
 
 def main():
@@ -45,7 +45,15 @@ def main():
     elif choice == "b":
         file_to_clean = input("Insert absolute file path.")
         data_cleaner(file_to_clean)
-
+    elif choice == "c":
+        vel = input("Insert the start velocity")
+        acc = input("Insert the acceleration if present")
+        s0 = input("Insert the initial distance")
+        time = input("Insert the travel time")
+        if acc == None:
+            print(velocity(int(s0), int(vel), int(time), 0))
+        else:
+            print(velocity(int(s0), int(vel), int(time), int(acc)))
     # other options
 
 
