@@ -1,9 +1,12 @@
 import math
 import os
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
 # common statistical functions
 
 
-def data_cleaner(input_file):
+def stars_data_grabber(input_file):
     finale = []
     data = []
     target = []     # occurences for value
@@ -31,6 +34,37 @@ def data_cleaner(input_file):
 
     file.close()
     os.remove("to_rem_parentheses.txt")
+
+
+def matrix_to_csv():
+    file = open('lenses.txt')
+    output = open ("output.csv", "w")
+    output.write("age,sp,ast,tpr,lens\n")
+    for line in file:
+        output.write(line.split()[1])
+        output.write(",")
+        output.write(line.split()[2])
+        output.write(",")
+        output.write(line.split()[3])
+        output.write(",")
+        output.write(line.split()[4])
+        output.write(",")
+        output.write(line.split()[5])
+        output.write("\n")
+
+
+def main():
+    matrix_to_csv()
+    a = pd.read_csv("output.txt")
+    print(a)
+
+    sns.heatmap(a)
+    #sns.boxplot(a)
+    plt.show()
+    return True
+
+
+main()
 
 
 def average(values):

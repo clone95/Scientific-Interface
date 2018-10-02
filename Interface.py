@@ -44,7 +44,7 @@ def main():
             common_stats(vals)
     elif choice == "b":
         file_to_clean = input("Insert absolute file path.")
-        data_cleaner(file_to_clean)
+        stars_data_grabber(file_to_clean)
     elif choice == "c":
         vel = input("Insert the start velocity")
         acc = input("Insert the acceleration if present")
